@@ -1,12 +1,15 @@
 FROM alpine:3.5
-LABEL Maintainer="Daryl Milne" \
+LABEL Maintainer="Daryl Milne <hello@daryl.nz>" \
       Description="Lightweight container with Nginx 1.10 & PHP-FPM 7.1 based on Alpine Linux."
 
 # Install packages from testing repo's
-RUN apk --no-cache add \
+RUN apk --update add \
     git \
     make \
     shadow \
+    libpng \
+    libjpeg \
+    ghostscript \
     imagemagick \
     php7 \
     php7-fpm \

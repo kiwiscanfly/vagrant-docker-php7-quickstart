@@ -1,0 +1,28 @@
+{
+    "name": "root/phpsite",
+    "description" : "Example php site",
+    "authors"     : [
+        {
+            "name"     : "Daryl Milne",
+            "twitter"  : "@darylmilne",
+            "homepage" : "http://daryl.nz/"
+        }
+    ],
+    "type"        : "project",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url" : "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url" : "https://rarst.net"
+        }
+    ],
+    "require": {
+        "jv2222/ezsql": "dev-master"
+    },
+    "require-dev": {
+    }
+}
