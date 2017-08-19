@@ -1,0 +1,35 @@
+version: "3"
+services:
+
+    phpsite:
+        build: ./phpsite
+        ports:
+            - "83:80"
+        volumes:
+            - ./phpsite/src:/var/www/html/
+            - ./phpsite/log:/log/
+            - ./phpsite/uploads:/var/www/phpsite/
+
+    web2:
+        image: dockercloud/hello-world
+        ports:
+            - "82:80"
+
+    haproxy:
+        build: ./haproxy
+        container_name: haproxy
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./haproxy/certs:/certs
+
+    mysql:
+        image: mariadb
+        ports:
+            - 8183:3306
+        volumes:
+            - ../mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: yourpassword
+

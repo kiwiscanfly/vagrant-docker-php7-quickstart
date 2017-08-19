@@ -1,0 +1,22 @@
+{
+  "name": "vagrant-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yourname/your-repo.git"
+  },
+  "author": "Daryl Milne",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-exec": "^3.0.0",
+    "grunt-peach": "^1.1.0",
+    "grunt-rsync": "^2.0.1",
+    "grunt-ssh": "^0.12.9"
+  }
+}
