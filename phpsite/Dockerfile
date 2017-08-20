@@ -1,16 +1,19 @@
-FROM alpine:3.5
+FROM alpine:3.6
 LABEL Maintainer="Daryl Milne <hello@daryl.nz>" \
       Description="Lightweight container with Nginx 1.10 & PHP-FPM 7.1 based on Alpine Linux."
 
 # Install packages from testing repo's
-RUN apk --update add \
+RUN apk --update --no-cache add \
     git \
     make \
     shadow \
+    jpeg \
     libpng \
     libjpeg \
+    libjpeg-turbo-dev \
     ghostscript \
     imagemagick \
+    imagemagick-dev \
     php7 \
     php7-fpm \
     php7-mysqli \
@@ -35,9 +38,8 @@ RUN apk --update add \
     php7-imagick \
     freetype \
     nginx \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/main/ \
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/community/
 
 # Install packages from stable repo's
 RUN apk --no-cache add supervisor curl
